@@ -1,0 +1,1 @@
+V4: eliminado el bloque central con reproductor MP4 provisional y su enlace desde la portada. Se mantiene la escena Three.js de portada y todas las secciones comerciales, el contacto y WhatsApp. El vídeo provisional no se incluye en la web.

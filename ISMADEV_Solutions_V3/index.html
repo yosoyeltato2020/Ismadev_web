@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ISMADEV Solutions: páginas web, tiendas online y aplicaciones web para negocios en toda España.">
+  <title>ISMADEV Solutions | Diseño y desarrollo web</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script type="module" src="scene3d.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="ISMADEV Solutions, inicio"><span class="cube" aria-hidden="true">◇</span><span>ISMADEV<span class="brand-light"> Solutions</span></span></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">☰ <span>Menú</span></button>
+    <nav id="primary-nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#ventajas">Ventajas</a><a href="#demostraciones">Demos</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="header-cta" href="#contacto">Hablemos ↗</a>
+  </header>
+  <main>
+    <!-- ESCENA 3D REAL: geometría, luces y cámara generadas con Three.js -->
+    <section class="hero hero-3d" id="inicio" aria-label="Presentación animada de ISMADEV">
+      <canvas id="scene" aria-label="Ciudad comercial animada en tres dimensiones"></canvas>
+      <div class="scene-shade" aria-hidden="true"></div>
+      <div class="hero-inner scene-copy">
+        <div class="eyebrow"><span class="dot"></span> DISEÑO · DESARROLLO · SOLUCIONES WEB</div>
+        <div id="caption" class="caption" aria-live="off">
+          <small>ISMADEV SOLUTIONS</small>
+          <h1>Tu negocio merece<br><em>destacar.</em></h1>
+          <p>Una presencia digital que abre puertas.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#precios">Ver precios ↗</a>
+          <a class="btn btn-outline" href="#contacto">Hablemos</a>
+        </div>
+        <div class="scene-controls" aria-label="Controles de la animación">
+          <button id="play" type="button" aria-label="Pausar animación">❚❚ Pausar</button>
+          <button id="restart" type="button">↺ Reiniciar</button>
+          <span id="chapter">01 / UNA NUEVA PERSPECTIVA</span>
+        </div>
+        <div class="scene-progress" aria-hidden="true"><div id="bar"></div></div>
+        <p class="scene-caption">Escena 3D interactiva · 28 segundos · sin audio · <a href="#video">Ver vídeo de avance ↓</a></p>
+        <p id="error" class="scene-error" hidden>La escena 3D no se ha podido cargar. El resto de la web sigue disponible.</p>
+      </div>
+    </section>
+    <section class="section video-info" id="video">
+      <div class="section-heading">
+        <span class="kicker">UNA EXPERIENCIA DIFERENTE</span>
+        <h2>Tu negocio en una <span class="gradient-text">nueva dimensión.</span></h2>
+        <p>La escena de la portada está creada con modelos tridimensionales, iluminación y movimientos de cámara reales. Es una primera animación integrada en la web; el vídeo comercial final con locución y música está en desarrollo.</p>
+      </div>
+      <div class="preview-video">
+        <video controls playsinline preload="metadata" poster="img/portada.jpg" aria-label="Vídeo de avance del anuncio ISMADEV">
+          <source src="video/avance-3d.mp4" type="video/mp4">
+          Tu navegador no admite vídeo HTML5.
+        </video>
+        <p>Avance conceptual de 24 segundos: todavía no es el anuncio definitivo con locución, música y personajes 3D.</p>
+      </div>
+    </section>
+    <section class="section services" id="servicios">
+      <div class="section-heading"><span class="kicker">LO QUE HACEMOS</span><h2>Soluciones digitales que <span class="gradient-text">impulsan ideas.</span></h2><p>Desde tu primera web hasta una herramienta personalizada para tu negocio.</p></div>
+      <div class="cards">
+        <article class="card"><span class="card-icon">⌘</span><h3>Páginas web</h3><p>Sitios profesionales, rápidos y adaptados a cualquier pantalla.</p></article>
+        <article class="card"><span class="card-icon">▣</span><h3>Tiendas online</h3><p>Espacios digitales para presentar y vender tus productos.</p></article>
+        <article class="card"><span class="card-icon">⌘</span><h3>Aplicaciones web</h3><p>Herramientas y funcionalidades desarrolladas según tus necesidades.</p></article>
+        <article class="card"><span class="card-icon">↻</span><h3>Mantenimiento</h3><p>Actualizaciones, soporte y pequeñas mejoras según el plan contratado.</p></article>
+      </div>
+    </section>
+    <section class="section pricing" id="precios">
+      <div class="section-heading"><span class="kicker">PRECIOS CLAROS</span><h2>Tu próxima web, <span class="gradient-text">sin complicaciones.</span></h2><p>Elige la modalidad que mejor encaje con tu negocio.</p></div>
+      <div class="invoice">
+        <div class="invoice-top"><div class="invoice-logo">◇ <strong>ISMADEV</strong></div><span class="invoice-status">PRESUPUESTO ORIENTATIVO</span></div>
+        <div class="invoice-tabs" role="group" aria-label="Modalidad de contratación"><button type="button" class="tab active" data-plan="single" aria-pressed="true">Pago único</button><button type="button" class="tab" data-plan="monthly" aria-pressed="false">Suscripción</button></div>
+        <h3 id="invoice-title">Tu página web profesional</h3>
+        <ul class="invoice-list"><li><span>Diseño personalizado</span><b>✓</b></li><li><span>Adaptación a móviles</span><b>✓</b></li><li><span>Dominio y hosting</span><b>✓</b></li><li><span>Correo profesional</span><b>✓</b></li><li><span>Formulario de contacto</span><b>✓</b></li><li><span>Optimización SEO básica</span><b>✓</b></li></ul>
+        <div class="invoice-total"><span>PRECIO DESDE</span><div><strong id="plan-price">650 €</strong><span id="plan-period"></span></div><small>+ IVA</small></div>
+        <p class="invoice-note" id="plan-note">Dominio, alojamiento y correo previstos para el primer año, sujetos a presupuesto. Mantenimiento opcional.</p>
+        <a class="btn btn-primary invoice-button" href="#contacto">Solicitar presupuesto ↗</a>
+        <a class="whatsapp invoice-whatsapp" id="invoice-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp ↗</a>
+        <p class="invoice-disclaimer">Precios orientativos. El alcance, las condiciones y los servicios definitivos se detallarán en el presupuesto.</p>
+      </div>
+    </section>
+    <section class="section advantages" id="ventajas">
+      <div class="section-heading"><span class="kicker">POR QUÉ ISMADEV</span><h2>Una web pensada <span class="gradient-text">para tu negocio.</span></h2></div>
+      <div class="cards cards-three">
+        <article class="card"><span class="card-icon">✧</span><h3>Diseño personalizado</h3><p>Una propuesta visual adaptada a tu actividad, no una plantilla idéntica para todos.</p></article>
+        <article class="card"><span class="card-icon">▤</span><h3>Compatible con móviles</h3><p>Diseño responsive para consultar tu negocio desde distintos dispositivos.</p></article>
+        <article class="card"><span class="card-icon">↗</span><h3>Comunicación directa</h3><p>Hablamos contigo para concretar necesidades, plazos y presupuesto.</p></article>
+      </div>
+    </section>
+    <section class="section demos" id="demostraciones">
+      <div class="section-heading"><span class="kicker">PRÓXIMAMENTE</span><h2>Descubre cómo podría ser <span class="gradient-text">tu página web.</span></h2><p>Prepararemos demostraciones ficticias e interactivas. Todavía no están publicadas y no representan clientes reales.</p></div>
+      <div class="cards cards-three">
+        <article class="card"><span class="card-icon">♨</span><h3>Restaurante</h3><p>Carta digital, reservas y presentación de platos.</p><span class="demo-badge">Demo en preparación</span></article>
+        <article class="card"><span class="card-icon">▣</span><h3>Tienda online</h3><p>Catálogo, productos y carrito de compra.</p><span class="demo-badge">Demo en preparación</span></article>
+        <article class="card"><span class="card-icon">▥</span><h3>Empresa</h3><p>Servicios, información corporativa y contacto.</p><span class="demo-badge">Demo en preparación</span></article>
+      </div>
+    </section>
+    <section class="section faq" id="faq">
+      <div class="section-heading"><span class="kicker">PREGUNTAS FRECUENTES</span><h2>Resolvemos tus <span class="gradient-text">dudas.</span></h2></div>
+      <div class="faq-list">
+        <details><summary>¿Cuánto cuesta una página web?</summary><p>Ofrecemos páginas web desde 650 € + IVA mediante pago único, o una modalidad de 45 €/mes + IVA con permanencia mínima de 12 meses. El presupuesto final depende del alcance del proyecto.</p></details>
+        <details><summary>¿Qué incluye la modalidad mensual?</summary><p>Se plantea incluir dominio, alojamiento, correo profesional y mantenimiento. Los límites de cambios, renovaciones y condiciones de finalización se especificarán en el contrato antes de contratar.</p></details>
+        <details><summary>¿Trabajáis con clientes de toda España?</summary><p>Sí. Podemos estudiar proyectos y comunicarnos de forma remota con negocios de toda España.</p></details>
+        <details><summary>¿Puedo contratar una tienda o aplicación a medida?</summary><p>Sí. Estos proyectos requieren un presupuesto personalizado según las funcionalidades solicitadas.</p></details>
+      </div>
+    </section>
+    <section class="section contact" id="contacto">
+      <div class="contact-copy"><span class="kicker">HABLEMOS DE TU IDEA</span><h2>Tu próximo proyecto <span class="gradient-text">empieza aquí.</span></h2><p>Cuéntanos qué necesitas. Trabajamos con clientes de toda España.</p><a href="mailto:ilopez.infor@hotmail.com">ilopez.infor@hotmail.com</a></div>
+      <form id="contact-form" class="contact-form">
+        <label for="name">Nombre</label><input id="name" name="name" required autocomplete="name" placeholder="Tu nombre">
+        <label for="email">Correo electrónico</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@correo.es">
+        <label for="service">Servicio</label><select id="service" name="service"><option>Página web</option><option>Tienda online</option><option>Aplicación web</option><option>Mantenimiento</option><option>Otro</option></select>
+        <label for="message">Cuéntanos tu proyecto</label><textarea id="message" name="message" required rows="5" placeholder="¿Qué tienes en mente?"></textarea>
+        <label class="privacy-check"><input type="checkbox" name="privacy" required> Acepto que mis datos se utilicen para responder a esta consulta.</label>
+        <p class="form-notice">Tus datos se utilizarán únicamente para atender la consulta. Antes de publicar la web deberá completarse la información legal y la política de privacidad.</p>
+        <p class="form-notice">El formulario puede enviar consultas directamente cuando el servidor SMTP esté configurado. Si no lo está, ofrece abrir tu aplicación de correo.</p>
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        <button class="btn btn-primary" type="submit">Enviar consulta ↗</button>
+      </form>
+    </section>
+  </main>
+  <footer><span>◇ ISMADEV Solutions</span><span>Diseño y desarrollo web · España</span><span><a href="legal.html">Aviso legal y privacidad</a> · © <span id="year"></span></span></footer>
+  <a class="floating-wa" id="floating-whatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WA</a>
+</body>
+</html>
